@@ -14,7 +14,7 @@
             "lookup": "properties.NAME",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Week9_Homework/Global%20Terrorism%20Index%202023.xlsx%20-%202022.csv"
+                    "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Week9_Homework/Global%20Terrorism%20Index%202023.csv"
                 },
                 "key": "Country",
                 "fields": ["Score", "Rank", "Incidents", "Fatalities"]
