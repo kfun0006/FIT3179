@@ -27,138 +27,138 @@
 ,THA,Thailand,26,5.430,25,4,47,0
 ,TGO,Togo,27,4.915,5,26,16,0
 ,BEN,Benin,28,4.840,12,18,15,1
-,LKA,Sri Lanka,29,4.839,0,0,0,0
+,LKA,Sri Lanka,29,4.839,0,0.1,0,0
 ,USA,United States of America,30,4.799,8,11,7,0
-,GRC,Greece,31,4.793,35,0,2,0
+,GRC,Greece,31,4.793,35,0.1,2,0
 ,LBY,Libya,32,4.730,4,4,5,0
 ,PSE,Palestine,33,4.611,17,1,21,0
 ,FRA,France,34,4.419,9,4,3,0
-,DEU,Germany,35,4.242,5,0,0,0
-,NPL,Nepal,36,4.134,2,0,2,0
+,DEU,Germany,35,4.242,5,0.1,0,0
+,NPL,Nepal,36,4.134,2,0.1,2,0
 ,DZA,Algeria,37,4.083,1,3,0,0
-,TZA,Tanzania,38,4.065,0,0,0,0
-,BDI,Burundi,39,4.051,0,0,0,0
-,TUN,Tunisia,40,3.989,3,0,5,0
-,PER,Peru,41,3.856,0,0,0,0
-,GBR,United Kingdom,42,3.840,4,0,2,0
-,BGD,Bangladesh,43,3.827,2,0,2,0
+,TZA,Tanzania,38,4.065,0,0.1,0,0
+,BDI,Burundi,39,4.051,0,0.1,0,0
+,TUN,Tunisia,40,3.989,3,0.1,5,0
+,PER,Peru,41,3.856,0,0.1,0,0
+,GBR,United Kingdom,42,3.840,4,0.1,2,0
+,BGD,Bangladesh,43,3.827,2,0.1,2,0
 ,DJI,Djibouti,44,3.800,1,7,6,0
 ,RUS,Russia,45,3.799,3,2,0,0
-,NZL,New Zealand,46,3.776,0,0,0,0
-,CIV,Cote d' Ivoire,47,3.747,1,0,0,0
-,UGA,Uganda,48,3.599,0,0,0,0
+,NZL,New Zealand,46,3.776,0,0.1,0,0
+,CIV,Cote d' Ivoire,47,3.747,1,0.1,0,0
+,UGA,Uganda,48,3.599,0,0.1,0,0
 ,NOR,Norway,49,3.514,1,2,21,0
-,TJK,Tajikistan,50,3.438,1,0,0,0
-,VEN,Venezuela,51,3.409,0,0,0,0
+,TJK,Tajikistan,50,3.438,1,0.1,0,0
+,VEN,Venezuela,51,3.409,0,0.1,0,0
 ,LBN,Lebanon,52,3.400,2,1,3,0
-,ITA,Italy,53,3.290,3,0,0,0
-,CAN,Canada,54,3.275,0,0,0,0
+,ITA,Italy,53,3.290,3,0.1,0,0
+,CAN,Canada,54,3.275,0,0.1,0,0
 ,CAF,Central African Republic,55,3.194,1,3,2,0
-,ETH,Ethiopia,56,3.044,2,0,7,0
-,ARG,Argentina,57,2.875,4,0,2,0
+,ETH,Ethiopia,56,3.044,2,0.1,7,0
+,ARG,Argentina,57,2.875,4,0.1,2,0
 ,SVK,Slovakia,58,2.784,1,2,1,0
 ,BEL,Belgium,59,2.763,3,1,1,0
-,ESP,Spain,60,2.712,6,0,1,0
-,AUT,Austria,61,2.677,0,0,0,0
+,ESP,Spain,60,2.712,6,0.1,1,0
+,AUT,Austria,61,2.677,0,0.1,0,0
 ,JPN,Japan,62,2.398,1,1,0,0
-,SAU,Saudi Arabia,63,2.387,0,0,0,0
+,SAU,Saudi Arabia,63,2.387,0,0.1,0,0
 ,SWE,Sweden,64,2.307,1,1,0,0
-,CHE,Switzerland,65,2.205,0,0,0,0
-,ECU,Ecuador,66,2.198,0,0,0,0
-,NLD,Netherlands,67,2.120,0,0,0,0
-,JOR,Jordan,68,2.033,0,0,0,0
-,AUS,Australia,69,1.830,0,0,0,0
-,UZB,Uzbekistan,70,1.731,2,0,0,0
-,PRY,Paraguay,71,1.605,0,0,0,0
-,MEX,Mexico,72,1.578,0,0,0,0
-,UKR,Ukraine,73,1.535,0,0,0,0
-,CYP,Cyprus,74,1.392,0,0,0,0
-,MYS,Malaysia,75,1.357,0,0,0,0
-,ARE,United Arab Emirates,76,1.241,1,0,0,0
-,SEN,Senegal,77,1.108,0,0,0,0
-,SWZ,Eswatini,78,1.058,0,0,0,0
-,BHR,Bahrain,79,0.826,0,0,0,0
-,URY,Uruguay,79,0.826,0,0,0,0
-,RWA,Rwanda,79,0.826,0,0,0,0
-,ZAF,South Africa,79,0.826,0,0,0,0
-,MAR,Morocco,83,0.757,0,0,0,0
-,ROU,Romania,84,0.682,0,0,0,0
-,BRA,Brazil,85,0.599,0,0,0,0
-,LTU,Lithuania,86,0.508,0,0,0,0
-,IRL,Ireland,87,0.291,0,0,0,0
-,MRT,Mauritania,87,0.291,0,0,0,0
-,VNM,Vietnam,89,0.227,0,0,0,0
-,AGO,Angola,90,0.158,0,0,0,0
-,DNK,Denmark,90,0.158,0,0,0,0
-,KSV,Kosovo,90,0.158,0,0,0,0
-,CHN,China,93,0.000,0,0,0,0
-,FIN,Finland,93,0.000,0,0,0,0
-,CZE,Czech Republic,93,0.000,0,0,0,0
-,GAB,Gabon,93,0.000,0,0,0,0
-,SDN,Sudan,93,0.000,0,0,0,0
-,TWN,Taiwan,93,0.000,0,0,0,0
-,ALB,Albania,93,0.000,0,0,0,0
-,ARM,Armenia,93,0.000,0,0,0,0
-,AZE,Azerbaijan,93,0.000,0,0,0,0
-,BGR,Bulgaria,93,0.000,0,0,0,0
-,BIH,Bosnia and Herzegovina,93,0.000,0,0,0,0
-,BLR,Belarus,93,0.000,0,0,0,0
-,BOL,Bolivia,93,0.000,0,0,0,0
-,BTN,Bhutan,93,0.000,0,0,0,0
-,BWA,Botswana,93,0.000,0,0,0,0
-,COG,Republic of the Congo,93,0.000,0,0,0,0
-,CRI,Costa Rica,93,0.000,0,0,0,0
-,CUB,Cuba,93,0.000,0,0,0,0
-,DOM,Dominican Republic,93,0.000,0,0,0,0
-,ERI,Eritrea,93,0.000,0,0,0,0
-,EST,Estonia,93,0.000,0,0,0,0
-,GEO,Georgia,93,0.000,0,0,0,0
-,GHA,Ghana,93,0.000,0,0,0,0
-,GIN,Guinea,93,0.000,0,0,0,0
-,GMB,The Gambia,93,0.000,0,0,0,0
-,GNB,Guinea-Bissau,93,0.000,0,0,0,0
-,GNQ,Equatorial Guinea,93,0.000,0,0,0,0
-,GTM,Guatemala,93,0.000,0,0,0,0
-,GUY,Guyana,93,0.000,0,0,0,0
-,HND,Honduras,93,0.000,0,0,0,0
-,HRV,Croatia,93,0.000,0,0,0,0
-,HTI,Haiti,93,0.000,0,0,0,0
-,HUN,Hungary,93,0.000,0,0,0,0
-,ISL,Iceland,93,0.000,0,0,0,0
-,JAM,Jamaica,93,0.000,0,0,0,0
-,KAZ,Kazakhstan,93,0.000,0,0,0,0
-,KGZ,Kyrgyz Republic,93,0.000,0,0,0,0
-,KHM,Cambodia,93,0.000,0,0,0,0
-,KOR,South Korea,93,0.000,0,0,0,0
-,KWT,Kuwait,93,0.000,0,0,0,0
-,LAO,Laos,93,0.000,0,0,0,0
-,LBR,Liberia,93,0.000,0,0,0,0
-,LSO,Lesotho,93,0.000,0,0,0,0
-,LVA,Latvia,93,0.000,0,0,0,0
-,MDA,Moldova,93,0.000,0,0,0,0
-,MDG,Madagascar,93,0.000,0,0,0,0
-,MKD,Macedonia (FYR),93,0.000,0,0,0,0
-,MNE,Montenegro,93,0.000,0,0,0,0
-,MNG,Mongolia,93,0.000,0,0,0,0
-,MUS,Mauritius,93,0.000,0,0,0,0
-,MWI,Malawi,93,0.000,0,0,0,0
-,NAM,Namibia,93,0.000,0,0,0,0
-,NIC,Nicaragua,93,0.000,0,0,0,0
-,OMN,Oman,93,0.000,0,0,0,0
-,PAN,Panama,93,0.000,0,0,0,0
-,PNG,Papua New Guinea,93,0.000,0,0,0,0
-,POL,Poland,93,0.000,0,0,0,0
-,PRK,North Korea,93,0.000,0,0,0,0
-,PRT,Portugal,93,0.000,0,0,0,0
-,QAT,Qatar,93,0.000,0,0,0,0
-,SGP,Singapore,93,0.000,0,0,0,0
-,SLE,Sierra Leone,93,0.000,0,0,0,0
-,SLV,El Salvador,93,0.000,0,0,0,0
-,SRB,Serbia,93,0.000,0,0,0,0
-,SSD,South Sudan,93,0.000,0,0,0,0
-,SVN,Slovenia,93,0.000,0,0,0,0
-,TKM,Turkmenistan,93,0.000,0,0,0,0
-,TLS,Timor-Leste,93,0.000,0,0,0,0
-,TTO,Trinidad and Tobago,93,0.000,0,0,0,0
-,ZMB,Zambia,93,0.000,0,0,0,0
-,ZWE,Zimbabwe,93,0.000,0,0,0,0
+,CHE,Switzerland,65,2.205,0,0.1,0,0
+,ECU,Ecuador,66,2.198,0,0.1,0,0
+,NLD,Netherlands,67,2.120,0,0.1,0,0
+,JOR,Jordan,68,2.033,0,0.1,0,0
+,AUS,Australia,69,1.830,0,0.1,0,0
+,UZB,Uzbekistan,70,1.731,2,0.1,0,0
+,PRY,Paraguay,71,1.605,0,0.1,0,0
+,MEX,Mexico,72,1.578,0,0.1,0,0
+,UKR,Ukraine,73,1.535,0,0.1,0,0
+,CYP,Cyprus,74,1.392,0,0.1,0,0
+,MYS,Malaysia,75,1.357,0,0.1,0,0
+,ARE,United Arab Emirates,76,1.241,1,0.1,0,0
+,SEN,Senegal,77,1.108,0,0.1,0,0
+,SWZ,Eswatini,78,1.058,0,0.1,0,0
+,BHR,Bahrain,79,0.826,0,0.1,0,0
+,URY,Uruguay,79,0.826,0,0.1,0,0
+,RWA,Rwanda,79,0.826,0,0.1,0,0
+,ZAF,South Africa,79,0.826,0,0.1,0,0
+,MAR,Morocco,83,0.757,0,0.1,0,0
+,ROU,Romania,84,0.682,0,0.1,0,0
+,BRA,Brazil,85,0.599,0,0.1,0,0
+,LTU,Lithuania,86,0.508,0,0.1,0,0
+,IRL,Ireland,87,0.291,0,0.1,0,0
+,MRT,Mauritania,87,0.291,0,0.1,0,0
+,VNM,Vietnam,89,0.227,0,0.1,0,0
+,AGO,Angola,90,0.158,0,0.1,0,0
+,DNK,Denmark,90,0.158,0,0.1,0,0
+,KSV,Kosovo,90,0.158,0,0.1,0,0
+,CHN,China,93,0.000,0,0.1,0,0
+,FIN,Finland,93,0.000,0,0.1,0,0
+,CZE,Czech Republic,93,0.000,0,0.1,0,0
+,GAB,Gabon,93,0.000,0,0.1,0,0
+,SDN,Sudan,93,0.000,0,0.1,0,0
+,TWN,Taiwan,93,0.000,0,0.1,0,0
+,ALB,Albania,93,0.000,0,0.1,0,0
+,ARM,Armenia,93,0.000,0,0.1,0,0
+,AZE,Azerbaijan,93,0.000,0,0.1,0,0
+,BGR,Bulgaria,93,0.000,0,0.1,0,0
+,BIH,Bosnia and Herzegovina,93,0.000,0,0.1,0,0
+,BLR,Belarus,93,0.000,0,0.1,0,0
+,BOL,Bolivia,93,0.000,0,0.1,0,0
+,BTN,Bhutan,93,0.000,0,0.1,0,0
+,BWA,Botswana,93,0.000,0,0.1,0,0
+,COG,Republic of the Congo,93,0.000,0,0.1,0,0
+,CRI,Costa Rica,93,0.000,0,0.1,0,0
+,CUB,Cuba,93,0.000,0,0.1,0,0
+,DOM,Dominican Republic,93,0.000,0,0.1,0,0
+,ERI,Eritrea,93,0.000,0,0.1,0,0
+,EST,Estonia,93,0.000,0,0.1,0,0
+,GEO,Georgia,93,0.000,0,0.1,0,0
+,GHA,Ghana,93,0.000,0,0.1,0,0
+,GIN,Guinea,93,0.000,0,0.1,0,0
+,GMB,The Gambia,93,0.000,0,0.1,0,0
+,GNB,Guinea-Bissau,93,0.000,0,0.1,0,0
+,GNQ,Equatorial Guinea,93,0.000,0,0.1,0,0
+,GTM,Guatemala,93,0.000,0,0.1,0,0
+,GUY,Guyana,93,0.000,0,0.1,0,0
+,HND,Honduras,93,0.000,0,0.1,0,0
+,HRV,Croatia,93,0.000,0,0.1,0,0
+,HTI,Haiti,93,0.000,0,0.1,0,0
+,HUN,Hungary,93,0.000,0,0.1,0,0
+,ISL,Iceland,93,0.000,0,0.1,0,0
+,JAM,Jamaica,93,0.000,0,0.1,0,0
+,KAZ,Kazakhstan,93,0.000,0,0.1,0,0
+,KGZ,Kyrgyz Republic,93,0.000,0,0.1,0,0
+,KHM,Cambodia,93,0.000,0,0.1,0,0
+,KOR,South Korea,93,0.000,0,0.1,0,0
+,KWT,Kuwait,93,0.000,0,0.1,0,0
+,LAO,Laos,93,0.000,0,0.1,0,0
+,LBR,Liberia,93,0.000,0,0.1,0,0
+,LSO,Lesotho,93,0.000,0,0.1,0,0
+,LVA,Latvia,93,0.000,0,0.1,0,0
+,MDA,Moldova,93,0.000,0,0.1,0,0
+,MDG,Madagascar,93,0.000,0,0.1,0,0
+,MKD,Macedonia (FYR),93,0.000,0,0.1,0,0
+,MNE,Montenegro,93,0.000,0,0.1,0,0
+,MNG,Mongolia,93,0.000,0,0.1,0,0
+,MUS,Mauritius,93,0.000,0,0.1,0,0
+,MWI,Malawi,93,0.000,0,0.1,0,0
+,NAM,Namibia,93,0.000,0,0.1,0,0
+,NIC,Nicaragua,93,0.000,0,0.1,0,0
+,OMN,Oman,93,0.000,0,0.1,0,0
+,PAN,Panama,93,0.000,0,0.1,0,0
+,PNG,Papua New Guinea,93,0.000,0,0.1,0,0
+,POL,Poland,93,0.000,0,0.1,0,0
+,PRK,North Korea,93,0.000,0,0.1,0,0
+,PRT,Portugal,93,0.000,0,0.1,0,0
+,QAT,Qatar,93,0.000,0,0.1,0,0
+,SGP,Singapore,93,0.000,0,0.1,0,0
+,SLE,Sierra Leone,93,0.000,0,0.1,0,0
+,SLV,El Salvador,93,0.000,0,0.1,0,0
+,SRB,Serbia,93,0.000,0,0.1,0,0
+,SSD,South Sudan,93,0.000,0,0.1,0,0
+,SVN,Slovenia,93,0.000,0,0.1,0,0
+,TKM,Turkmenistan,93,0.000,0,0.1,0,0
+,TLS,Timor-Leste,93,0.000,0,0.1,0,0
+,TTO,Trinidad and Tobago,93,0.000,0,0.1,0,0
+,ZMB,Zambia,93,0.000,0,0.1,0,0
+,ZWE,Zimbabwe,93,0.000,0,0.1,0,0
