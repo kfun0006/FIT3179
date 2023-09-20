@@ -20,7 +20,7 @@
                 "fields": ["Score", "Rank", "Incidents", "Fatalities"]
             }
         },
-        {"calculate": "datum.Incidents / datum.Fatalities + 0.1", "as": "Fatalities_rate"}
+        {"calculate": "datum.Fatalities / datum.Incidents + 0.1", "as": "Fatalities_rate"}
     ],
     "mark": {"type": "geoshape", "stroke": "grey"},
     "encoding": {
