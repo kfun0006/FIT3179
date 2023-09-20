@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Global Terrorism Index (2022) - Fatalities Rate",
-    "width": 950,
-    "height": 450,
+    "width": 1500,
+    "height": 700,
     "projection": {"type": "equalEarth"},
     "data": {
         "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Week9_Homework/map.json",
