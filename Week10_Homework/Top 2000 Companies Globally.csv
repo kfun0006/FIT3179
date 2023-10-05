@@ -1,4 +1,4 @@
-Global Rank,Company,Sales ($billion),Profits ($billion),Assets ($billion),Market Value ($billion),Country,Continent,Latitude,Longitude
+Global Rank,Company,Sales,Profits,Assets,Market Value,Country,Continent,Latitude,Longitude
 1,ICBC,134.8,37.8,2813.5,237.3,China,Asia,35.86166,104.195397
 2,China Construction Bank,113.1,30.6,2241,202,China,Asia,35.86166,104.195397
 3,JPMorgan Chase,108.2,21.3,2359.1,191.4,USA,North America,37.09024,-95.712891
