@@ -1,4 +1,4 @@
-County,Continent,Total Market Value,Latitude,Longitude,Count
+County,Continent,Total_Market_Value,Latitude,Longitude,Count
 China,Asia,2762.8,35.86166,104.195397,135
 USA,North America,14795.2,37.09024,-95.712891,535
 UK,Europe,2326.9,55.378051,-3.435973,97
