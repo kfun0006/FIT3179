@@ -127,7 +127,75 @@
               "color": {"value": "black"},
               "opacity": {
                 "condition": {
-                  "test": "datum['Global Rank'] == '1' || datum['Global Rank'] == '2' || datum['Global Rank'] == '3' || datum['Global Rank'] == '4' || datum['Global Rank'] == '5'",
+                  "test": "datum['Global Rank'] == '1' || datum['Global Rank'] == '4' || datum['Global Rank'] == '5'",
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {"field": "Company", "type": "nominal"},
+                {"field": "Global Rank", "type": "ordinal"},
+                {"field": "Country", "type": "nominal"},
+                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
+                {
+                  "field": "Turnover rate",
+                  "type": "quantitative",
+                  "format": ".5f"
+                }
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "right",
+              "baseline": "middle",
+              "dx": -5,
+              "dy": 5,
+              "fontSize": 11.5,
+              "fontStyle": "italic"
+            },
+            "encoding": {
+              "text": {"field": "Company", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Global Rank'] == '2'",
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {"field": "Company", "type": "nominal"},
+                {"field": "Global Rank", "type": "ordinal"},
+                {"field": "Country", "type": "nominal"},
+                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
+                {
+                  "field": "Turnover rate",
+                  "type": "quantitative",
+                  "format": ".5f"
+                }
+              ]
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "right",
+              "baseline": "middle",
+              "dx": -10,
+              "dy": 15,
+              "fontSize": 11.5,
+              "fontStyle": "italic"
+            },
+            "encoding": {
+              "text": {"field": "Company", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['Global Rank'] == '3'",
                   "value": 1
                 },
                 "value": 0
