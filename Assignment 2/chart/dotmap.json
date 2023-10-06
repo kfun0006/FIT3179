@@ -38,7 +38,7 @@
         },
         {
             "data": {
-            "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
+            "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/totalMarketValue.csv"
             },
             "transform": [
                 {
@@ -111,7 +111,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
+                "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/totalMarketValue.csv"
             },
             "transform": [
                 {

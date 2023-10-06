@@ -1,360 +1,360 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/Top%202000%20Companies%20Globally.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/Top%202000%20Companies%20Globally.csv"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels":[
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
+      }
     },
-    "params": [
-      {
-        "name": "Continent_selection",
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "labels":[
-            "Show All",
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "name": "Continent Selection: "
+    {
+      "name": "Ranking_Above",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 2000,
+        "step": 10,
+        "name": "Ranking Range Selector: "
+      }
+    }
+  ],
+  "transform": [  
+    {"filter": "datum.Sales > 0"}, 
+    {"filter": "datum.Profits > 0"}, 
+    {"filter": "datum.Assets > 0"},
+    {"calculate": "datum.Sales / datum.Assets", "as": "Turnover rate"},
+    {"calculate": "datum.Profits / datum.Assets", "as": "Return ratio"},
+    {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},
+    {"filter": "datum.Global_Rank <= Ranking_Above"}
+  ],
+  "vconcat" : [
+    {
+      "title": "Assets Turnover Rate per Company",
+      "width": "container",
+      "height": 200,
+      "encoding": {
+        "x": {
+          "field": "Assets",
+          "type": "quantitative",
+          "axis": {"tickCount": 3},
+          "scale": {"type": "log", "domain": [1, 5000]},
+          "title" : null
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "axis": {"tickCount": 3},
+          "scale": {"type": "log", "domain": [0.1, 1000]},
+          "title" : "Sales ($billion)"
         }
       },
-      {
-        "name": "Ranking_Above",
-        "value": 2000,
-        "bind": {
-          "input": "range",
-          "min": 1,
-          "max": 2000,
-          "step": 10,
-          "name": "Ranking Range Selector: "
-        }
-      }
-    ],
-    "transform": [  
-      {"filter": "datum.Sales > 0"}, 
-      {"filter": "datum.Profits > 0"}, 
-      {"filter": "datum.Assets > 0"},
-      {"calculate": "datum.Sales / datum.Assets", "as": "Turnover rate"},
-      {"calculate": "datum.Profits / datum.Assets", "as": "Return ratio"},
-      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},
-      {"filter": "datum.Global_Rank <= Ranking_Above"}
-    ],
-    "vconcat" : [
-      {
-        "title": "Assets Turnover Rate per Company",
-        "width": "container",
-        "height": 200,
-        "encoding": {
-          "x": {
-            "field": "Assets",
-            "type": "quantitative",
-            "axis": {"tickCount": 3},
-            "scale": {"type": "log", "domain": [1, 5000]},
-            "title" : null
-          },
-          "y": {
-            "field": "Sales",
-            "type": "quantitative",
-            "axis": {"tickCount": 3},
-            "scale": {"type": "log", "domain": [0.1, 1000]},
-            "title" : "Sales ($billion)"
-          }
-        },
-        "layer" : [
-          {
-            "params": [
-              {
-                "name": "brush",
-                "select": {"type": "interval", "encodings": ["x"]}
+      "layer" : [
+        {
+          "params": [
+            {
+              "name": "brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": "circle",
+          "encoding" : {
+            "color": {
+              "field": "Continent",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "North America",
+                  "South America",
+                  "Europe",
+                  "Africa",
+                  "Asia",
+                  "Oceania"
+                ],
+                "range": [
+                  "#e41a1c",
+                  "#984ea3",
+                  "#ff7f00",
+                  "#8fbf6d",
+                  "#377eb8",
+                  "#a65628"
+                ]
               }
-            ],
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": "circle",
-            "encoding" : {
-              "color": {
-                "field": "Continent",
-                "type": "nominal",
-                "scale": {
-                  "domain": [
-                    "North America",
-                    "South America",
-                    "Europe",
-                    "Africa",
-                    "Asia",
-                    "Oceania"
-                  ],
-                  "range": [
-                    "#e41a1c",
-                    "#984ea3",
-                    "#ff7f00",
-                    "#8fbf6d",
-                    "#377eb8",
-                    "#a65628"
-                  ]
-                }
+            },
+            "opacity": {
+              "value": 0.4
+            },
+            "size": {
+              "field": "Turnover rate",
+              "type": "quantitative",
+              "scale":{
+                  "type": "threshold",
+                  "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
+                  "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
               },
-              "opacity": {
-                "value": 0.4
-              },
-              "size": {
+              "legend": {"title": "Assets Turnover Rate"}
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
+              {
                 "field": "Turnover rate",
                 "type": "quantitative",
-                "scale":{
-                    "type": "threshold",
-                    "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-                    "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
-                },
-                "legend": {"title": "Assets Turnover Rate"}
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
-                {
-                  "field": "Turnover rate",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
-          },
-          {
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "middle",
-              "dx": -5,
-              "dy": -10,
-              "fontSize": 11.5,
-              "fontStyle": "italic"
-            },
-            "encoding": {
-              "text": {"field": "Company", "type": "nominal"},
-              "color": {"value": "black"},
-              "opacity": {
-                "condition": {
-                  "test": "datum['Global_Rank'] == '1' || datum['Global_Rank'] == '4' || datum['Global_Rank'] == '5'",
-                  "value": 1
-                },
-                "value": 0
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
-                {
-                  "field": "Turnover rate",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
-          },
-          {
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "middle",
-              "dx": -5,
-              "dy": 5,
-              "fontSize": 11.5,
-              "fontStyle": "italic"
-            },
-            "encoding": {
-              "text": {"field": "Company", "type": "nominal"},
-              "color": {"value": "black"},
-              "opacity": {
-                "condition": {
-                  "test": "datum['Global Rank'] == '2'",
-                  "value": 1
-                },
-                "value": 0
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
-                {
-                  "field": "Turnover rate",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
-          },
-          {
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "middle",
-              "dx": -10,
-              "dy": 15,
-              "fontSize": 11.5,
-              "fontStyle": "italic"
-            },
-            "encoding": {
-              "text": {"field": "Company", "type": "nominal"},
-              "color": {"value": "black"},
-              "opacity": {
-                "condition": {
-                  "test": "datum['Global_Rank'] == '3'",
-                  "value": 1
-                },
-                "value": 0
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
-                {
-                  "field": "Turnover rate",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "title": "Return On Assets per Company",
-        "width": "container",
-        "height": 200,
-        "encoding": {
-          "x": {
-            "field": "Assets",
-            "type": "quantitative",
-            "axis": {"tickCount": 3},
-            "scale": {"type": "log", "domain": [1, 5000]},
-            "title" : "Assets ($billion)"
-          },
-          "y": {
-            "field": "Profits",
-            "type": "quantitative",
-            "axis": {"tickCount": 3},
-            "scale": {"type": "log", "domain": [0.1, 1000]},
-            "title" : "Profits ($billion)"
+                "format": ".5f"
+              }
+            ]
           }
         },
-        "layer" : [
-          {
-            "params": [
+        {
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -5,
+            "dy": -10,
+            "fontSize": 11.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Company", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Global_Rank'] == '1' || datum['Global_Rank'] == '4' || datum['Global_Rank'] == '5'",
+                "value": 1
+              },
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
               {
-                "name": "brush",
-                "select": {"type": "interval", "encodings": ["x"]}
+                "field": "Turnover rate",
+                "type": "quantitative",
+                "format": ".5f"
               }
-            ],
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": "circle",
-            "encoding" : {
-              "color": {
-                "field": "Continent",
-                "type": "nominal",
-                "scale": {
-                  "domain": [
-                    "North America",
-                    "South America",
-                    "Europe",
-                    "Africa",
-                    "Asia",
-                    "Oceania"
-                  ],
-                  "range": [
-                    "#e41a1c",
-                    "#984ea3",
-                    "#ff7f00",
-                    "#8fbf6d",
-                    "#377eb8",
-                    "#a65628"
-                  ]
-                }
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -5,
+            "dy": 5,
+            "fontSize": 11.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Company", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Global Rank'] == '2'",
+                "value": 1
               },
-              "opacity": {
-                "value": 0.4
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
+              {
+                "field": "Turnover rate",
+                "type": "quantitative",
+                "format": ".5f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -10,
+            "dy": 15,
+            "fontSize": 11.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Company", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Global_Rank'] == '3'",
+                "value": 1
               },
-              "size": {
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Sales", "type": "quantitative", "format": "$", "title": "Sales (billion)"},
+              {
+                "field": "Turnover rate",
+                "type": "quantitative",
+                "format": ".5f"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Return On Assets per Company",
+      "width": "container",
+      "height": 200,
+      "encoding": {
+        "x": {
+          "field": "Assets",
+          "type": "quantitative",
+          "axis": {"tickCount": 3},
+          "scale": {"type": "log", "domain": [1, 5000]},
+          "title" : "Assets ($billion)"
+        },
+        "y": {
+          "field": "Profits",
+          "type": "quantitative",
+          "axis": {"tickCount": 3},
+          "scale": {"type": "log", "domain": [0.1, 1000]},
+          "title" : "Profits ($billion)"
+        }
+      },
+      "layer" : [
+        {
+          "params": [
+            {
+              "name": "brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": "circle",
+          "encoding" : {
+            "color": {
+              "field": "Continent",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "North America",
+                  "South America",
+                  "Europe",
+                  "Africa",
+                  "Asia",
+                  "Oceania"
+                ],
+                "range": [
+                  "#e41a1c",
+                  "#984ea3",
+                  "#ff7f00",
+                  "#8fbf6d",
+                  "#377eb8",
+                  "#a65628"
+                ]
+              }
+            },
+            "opacity": {
+              "value": 0.4
+            },
+            "size": {
+              "field": "Return ratio",
+              "type": "quantitative",
+              "legend": {"title": "Return On Assets"},
+              "scale":{
+                  "type": "threshold",
+                  "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
+                  "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
+              }
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Profits", "type": "quantitative", "format": "$", "title": "Profits (billion)"},
+              {
                 "field": "Return ratio",
                 "type": "quantitative",
-                "legend": {"title": "Return On Assets"},
-                "scale":{
-                    "type": "threshold",
-                    "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-                    "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
-                }
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Profits", "type": "quantitative", "format": "$", "title": "Profits (billion)"},
-                {
-                  "field": "Return ratio",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
-          },
-          {
-            "transform": [{"filter": {"param": "brush"}}],
-            "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "middle",
-              "dx": -5,
-              "dy": -10,
-              "fontSize": 11.5,
-              "fontStyle": "italic"
-            },
-            "encoding": {
-              "text": {"field": "Company", "type": "nominal"},
-              "color": {"value": "black"},
-              "opacity": {
-                "condition": {
-                  "test": "datum['Global_Rank'] == '1' || datum['Global_Rank'] == '2' || datum['Global_Rank'] == '3' || datum['Global_Rank'] == '4' || datum['Global_Rank'] == '5'",
-                  "value": 1
-                },
-                "value": 0
-              },
-              "tooltip": [
-                {"field": "Company", "type": "nominal"},
-                {"field": "Global_Rank", "type": "ordinal"},
-                {"field": "Country", "type": "nominal"},
-                {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
-                {"field": "Profits", "type": "quantitative", "format": "$", "title": "Profits (billion)"},
-                {
-                  "field": "Return ratio",
-                  "type": "quantitative",
-                  "format": ".5f"
-                }
-              ]
-            }
+                "format": ".5f"
+              }
+            ]
           }
-        ]
-      }
-    ],
-    "resolve": {"legend": {"size": "independent"}}
-  }
+        },
+        {
+          "transform": [{"filter": {"param": "brush"}}],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "middle",
+            "dx": -5,
+            "dy": -10,
+            "fontSize": 11.5,
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Company", "type": "nominal"},
+            "color": {"value": "black"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Global_Rank'] == '1' || datum['Global_Rank'] == '2' || datum['Global_Rank'] == '3' || datum['Global_Rank'] == '4' || datum['Global_Rank'] == '5'",
+                "value": 1
+              },
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "Company", "type": "nominal"},
+              {"field": "Global_Rank", "type": "ordinal"},
+              {"field": "Country", "type": "nominal"},
+              {"field": "Assets", "type": "quantitative", "format": "$", "title": "Assets (billion)"},
+              {"field": "Profits", "type": "quantitative", "format": "$", "title": "Profits (billion)"},
+              {
+                "field": "Return ratio",
+                "type": "quantitative",
+                "format": ".5f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {"legend": {"size": "independent"}}
+}
