@@ -53,7 +53,7 @@
     "vconcat" : [
       {
         "title": "Assets Turnover Rate per Company",
-        "width": 500,
+        "width": "container",
         "height": 200,
         "encoding": {
           "x": {
@@ -105,15 +105,15 @@
                 }
               },
               "opacity": {
-                "value": 0.6
+                "value": 0.4
               },
               "size": {
                 "field": "Turnover rate",
                 "type": "quantitative",
-                "scale": {
-                  "type": "threshold",
-                  "domain": [0.1, 2, 4, 6, 8],
-                  "range": [10, 50, 150, 250, 350, 450]
+                "scale":{
+                    "type": "threshold",
+                    "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
+                    "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
                 },
                 "legend": {"title": "Assets Turnover Rate"}
               },
@@ -240,7 +240,7 @@
       },
       {
         "title": "Return On Assets per Company",
-        "width": 500,
+        "width": "container",
         "height": 200,
         "encoding": {
           "x": {
@@ -292,16 +292,16 @@
                 }
               },
               "opacity": {
-                "value": 0.6
+                "value": 0.4
               },
               "size": {
                 "field": "Return ratio",
                 "type": "quantitative",
                 "legend": {"title": "Return On Assets"},
-                "scale": {
-                  "type": "threshold",
-                  "domain": [0.01, 0.1, 0.2, 0.3, 0.4],
-                  "range": [10, 50, 100, 200, 300, 400]
+                "scale":{
+                    "type": "threshold",
+                    "domain":[0.01, 0.05, 0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
+                    "range": [10, 40, 70, 100, 130, 160, 190, 210, 270, 300, 330, 360, 390]
                 }
               },
               "tooltip": [
