@@ -3,15 +3,6 @@
     "data": {
       "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/Top%202000%20Companies%20Globally.csv"
     },
-    "transform": [  
-      {"filter": "datum.Sales > 0"}, 
-      {"filter": "datum.Profits > 0"}, 
-      {"filter": "datum.Assets > 0"},
-      {"calculate": "datum.Sales / datum.Assets", "as": "Turnover rate"},
-      {"calculate": "datum.Profits / datum.Assets", "as": "Return ratio"},
-      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},
-      {"filter": "datum.Global_Rank < Ranking_Above"}
-    ],
     "params": [
       {
         "name": "Continent_selection",
@@ -43,18 +34,27 @@
         "value": 2000,
         "bind": {
           "input": "range",
-          "min": 0,
+          "min": 1,
           "max": 2000,
           "step": 10,
           "name": "Ranking Range Selector: "
         }
       }
     ],
+    "transform": [  
+      {"filter": "datum.Sales > 0"}, 
+      {"filter": "datum.Profits > 0"}, 
+      {"filter": "datum.Assets > 0"},
+      {"calculate": "datum.Sales / datum.Assets", "as": "Turnover rate"},
+      {"calculate": "datum.Profits / datum.Assets", "as": "Return ratio"},
+      {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},
+      {"filter": "datum.Global_Rank <= Ranking_Above"}
+    ],
     "vconcat" : [
       {
         "title": "Assets Turnover Rate per Company",
         "width": 500,
-        "height": 400,
+        "height": 200,
         "encoding": {
           "x": {
             "field": "Assets",
@@ -73,6 +73,13 @@
         },
         "layer" : [
           {
+            "params": [
+              {
+                "name": "brush",
+                "select": {"type": "interval", "encodings": ["x"]}
+              }
+            ],
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": "circle",
             "encoding" : {
               "color": {
@@ -125,6 +132,7 @@
             }
           },
           {
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": {
               "type": "text",
               "align": "right",
@@ -159,6 +167,7 @@
             }
           },
           {
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": {
               "type": "text",
               "align": "right",
@@ -193,6 +202,7 @@
             }
           },
           {
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": {
               "type": "text",
               "align": "right",
@@ -231,7 +241,7 @@
       {
         "title": "Return On Assets per Company",
         "width": 500,
-        "height": 400,
+        "height": 200,
         "encoding": {
           "x": {
             "field": "Assets",
@@ -250,6 +260,13 @@
         },
         "layer" : [
           {
+            "params": [
+              {
+                "name": "brush",
+                "select": {"type": "interval", "encodings": ["x"]}
+              }
+            ],
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": "circle",
             "encoding" : {
               "color": {
@@ -302,6 +319,7 @@
             }
           },
           {
+            "transform": [{"filter": {"param": "brush"}}],
             "mark": {
               "type": "text",
               "align": "right",
