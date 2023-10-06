@@ -3,93 +3,147 @@
     "width": 800,
     "height": 450,
     "title": "Global Top 2000 Companies Location & Mean Market Value",
+    "params": [
+        {
+            "name": "MeanMarketValue_Above",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 32,
+                "step": 1,
+                "name": "Minimum Mean Market Value: "
+            }
+        },
+        {
+            "name": "TotalMarketValue_Above",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 2700,
+                "step": 100,
+                "name": "Minimum Total Market Value: "
+            }
+        }
+    ],
     "projection": {"type": "equalEarth"},
     "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/map.json",
-          "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/map.json",
+                "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+            },
+            "mark": {"type": "geoshape", "fill": "#dedcdc", "stroke": "white"}
         },
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
-        },
-        "transform": [
-          {
-            "calculate": "datum.Total_Market_Value / datum.Count",
-            "as": "MeanMarketValue"
-          }
-        ],
-        "mark": {"type": "circle"},
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "size": {
-            "field": "MeanMarketValue",
-            "type": "quantitative",
-            "title": "Mean Market Value ($billion)",
-            "scale": {
-              "type": "threshold",
-              "domain": [5, 10, 15, 20, 25, 30],
-              "range": [10, 50, 100, 200, 300, 400, 500],
+        {
+            "data": {
+            "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
             },
-            "legend": {"format": "$"}
-          },
-          "color": {
-            "field": "Continent",
-            "type": "nominal",
-            "title": "Continent"
-          },
-          "tooltip": [
-            {"field": "County", "type": "nominal", "title": "Country"},
-            {
-              "field": "Total_Market_Value",
-              "type": "quantitative",
-              "format": "$",
-              "title": "Total Market Value ($billion)"
-            },
-            {
-              "field": "Count",
-              "type": "quantitative",
-              "title": "Count of Top 2000 Companies"
-            },
-            {
-              "field": "MeanMarketValue",
-              "type": "quantitative",
-              "format": "$.2f",
-              "title": "Mean Market Value ($billion)"
+            "transform": [
+                {
+                    "calculate": "datum.Total_Market_Value / datum.Count",
+                    "as": "MeanMarketValue"
+                },
+                {"filter": "datum.MeanMarketValue > MeanMarketValue_Above"},
+                {"filter": "datum.Total_Market_Value > TotalMarketValue_Above"}
+            ],
+            "mark": {"type": "circle"},
+            "encoding": {
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "size": {
+                    "field": "MeanMarketValue",
+                    "type": "quantitative",
+                    "title": "Mean Market Value ($billion)",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [5, 10, 15, 20, 25, 30],
+                        "range": [10, 50, 100, 200, 300, 400, 500],
+                    },
+                    "legend": {"format": "$"}
+                },
+                "color": {
+                    "field": "Continent",
+                    "type": "nominal",
+                    "title": "Continent",
+                    "scale": {
+                        "domain": [
+                          "North America",
+                          "South America",
+                          "Europe",
+                          "Africa",
+                          "Asia",
+                          "Oceania"
+                        ],
+                        "range": [
+                          "#e41a1c",
+                          "#984ea3",
+                          "#ff7f00",
+                          "#8fbf6d",
+                          "#377eb8",
+                          "#a65628"
+                        ]
+                    }
+                },
+                "opacity": {"value": 0.4},
+                "tooltip": [
+                    {"field": "County", "type": "nominal", "title": "Country"},
+                    {
+                    "field": "Total_Market_Value",
+                    "type": "quantitative",
+                    "format": "$",
+                    "title": "Total Market Value ($billion)"
+                    },
+                    {
+                    "field": "Count",
+                    "type": "quantitative",
+                    "title": "Count of Top 2000 Companies"
+                    },
+                    {
+                    "field": "MeanMarketValue",
+                    "type": "quantitative",
+                    "format": "$.2f",
+                    "title": "Mean Market Value ($billion)"
+                    }
+                ]
             }
-          ]
-        }
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
         },
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "baseline": "middle",
-          "dx": 37,
-          "dy": -10,
-          "fontSize": 11.5,
-          "fontStyle": "italic"
-        },
-        "encoding": {
-          "opacity": {
-            "condition": {
-              "test": "datum['County'] == 'UK' || datum['County'] == 'USA' || datum['County'] == 'China' || datum['County'] == 'Japan' || datum['County'] == 'Germany' || datum['County'] == 'France' || datum['County'] == 'Australia'",
-              "value": 1
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/totalMarketValue.csv"
             },
-            "value": 0
-          },
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "text": {"field": "County", "type": "nominal"},
-          "color": {"value": "black"}
+            "transform": [
+                {
+                    "calculate": "datum.Total_Market_Value / datum.Count",
+                    "as": "MeanMarketValue"
+                },
+                {"filter": "datum['MeanMarketValue'] > MeanMarketValue_Above"},
+                {"filter": "datum['Total_Market_Value'] > TotalMarketValue_Above"}
+            ],
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": 37,
+                "dy": -10,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+            },
+            
+            "encoding": {
+                "opacity": {
+                    "condition": {
+                    "test": "datum['County'] == 'UK' || datum['County'] == 'USA' || datum['County'] == 'China' || datum['County'] == 'Japan' || datum['County'] == 'Germany' || datum['County'] == 'France' || datum['County'] == 'Australia'",
+                    "value": 1
+                    },
+                    "value": 0
+                },
+                "longitude": {"field": "Longitude", "type": "quantitative"},
+                "latitude": {"field": "Latitude", "type": "quantitative"},
+                "text": {"field": "County", "type": "nominal"},
+                "color": {"value": "black"}
+            }
         }
-      }
     ]
-  }
+}
