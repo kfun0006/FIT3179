@@ -1,0 +1,85 @@
+Company,ValueType,Value
+ICBC,Sales,134.8
+China Construction Bank,Sales,113.1
+JPMorgan Chase,Sales,108.2
+General Electric,Sales,147.4
+Exxon Mobil,Sales,420.7
+HSBC Holdings,Sales,104.9
+Royal Dutch Shell,Sales,467.2
+Agricultural Bank of China,Sales,103
+PetroChina,Sales,308.9
+Berkshire Hathaway,Sales,162.5
+Bank of China,Sales,98.1
+Wells Fargo,Sales,91.2
+Chevron,Sales,222.6
+Volkswagen Group,Sales,254
+Wal-Mart Stores,Sales,469.2
+Apple,Sales,164.7
+Gazprom,Sales,144
+BP,Sales,370.9
+Citigroup,Sales,90.7
+Petrobras,Sales,144.1
+Samsung Electronics,Sales,187.8
+ICBC,Profits,37.8
+China Construction Bank,Profits,30.6
+JPMorgan Chase,Profits,21.3
+General Electric,Profits,13.6
+Exxon Mobil,Profits,44.9
+HSBC Holdings,Profits,14.3
+Royal Dutch Shell,Profits,26.6
+Agricultural Bank of China,Profits,23
+PetroChina,Profits,18.3
+Berkshire Hathaway,Profits,14.8
+Bank of China,Profits,22.1
+Wells Fargo,Profits,18.9
+Chevron,Profits,26.2
+Volkswagen Group,Profits,28.6
+Wal-Mart Stores,Profits,17
+Apple,Profits,41.7
+Gazprom,Profits,40.6
+BP,Profits,11.6
+Citigroup,Profits,7.5
+Petrobras,Profits,11
+Samsung Electronics,Profits,21.7
+ICBC,Assets,2813.5
+China Construction Bank,Assets,2241
+JPMorgan Chase,Assets,2359.1
+General Electric,Assets,685.3
+Exxon Mobil,Assets,333.8
+HSBC Holdings,Assets,2684.1
+Royal Dutch Shell,Assets,360.3
+Agricultural Bank of China,Assets,2124.2
+PetroChina,Assets,347.8
+Berkshire Hathaway,Assets,427.5
+Bank of China,Assets,2033.8
+Wells Fargo,Assets,1423
+Chevron,Assets,233
+Volkswagen Group,Assets,408.2
+Wal-Mart Stores,Assets,203.1
+Apple,Assets,196.1
+Gazprom,Assets,339.3
+BP,Assets,301
+Citigroup,Assets,1864.7
+Petrobras,Assets,331.6
+Samsung Electronics,Assets,196.3
+ICBC,Market Value,237.3
+China Construction Bank,Market Value,202
+JPMorgan Chase,Market Value,191.4
+General Electric,Market Value,243.7
+Exxon Mobil,Market Value,400.4
+HSBC Holdings,Market Value,201.3
+Royal Dutch Shell,Market Value,213.1
+Agricultural Bank of China,Market Value,150.8
+PetroChina,Market Value,261.2
+Berkshire Hathaway,Market Value,252.8
+Bank of China,Market Value,131.7
+Wells Fargo,Market Value,201.3
+Chevron,Market Value,232.5
+Volkswagen Group,Market Value,94.4
+Wal-Mart Stores,Market Value,242.5
+Apple,Market Value,416.6
+Gazprom,Market Value,111.4
+BP,Market Value,130.4
+Citigroup,Market Value,143.6
+Petrobras,Market Value,120.7
+Samsung Electronics,Market Value,174.4
