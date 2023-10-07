@@ -1,0 +1,119 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Comparison of Top 20 Global Companies by Sales, Profits, Assets, and Market Value",
+    "width": "container",
+    "height": "1000",
+    "data": {
+      "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/Top%202000%20Companies%20Globally.csv"
+    },
+    "transform": [
+      {"filter": "datum.Global_Rank <= 20"}
+    ],
+    "encoding": {
+      "y": {"field": "Company", "type": "nominal", "sort": [""]},
+      "x": {"scale": {"domain": [0, 2813]}}
+    },
+    "layer": [
+      {
+        "mark": {"type": "bar", "size": 15, "yOffset": -14, "color": "purple"},
+        "encoding": {
+          "x": {
+            "field": "Sales",
+            "type": "quantitative",
+            "axis": {"title": null, "ticks": false}
+          },
+          "tooltip": [
+            {"field": "Company", "type": "nominal"},
+            {"field": "Global_Rank", "type": "nominal", "title": "Rank"},
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {
+              "field": "Sales",
+              "type": "quantitative",
+              "format": "$",
+              "title": "Sales ($billion)"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "bar", "size": 15, "yOffset": -4, "color": "orange"},
+        "encoding": {
+          "x": {
+            "field": "Profits",
+            "type": "quantitative",
+            "axis": {"title": null, "ticks": false}
+          },
+          "tooltip": [
+            {"field": "Company", "type": "nominal"},
+            {"field": "Global_Rank", "type": "nominal", "title": "Rank"},
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {
+              "field": "Profits",
+              "type": "quantitative",
+              "format": "$",
+              "title": "Profits ($billion)"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "bar", "size": 15, "yOffset": 6, "color": "teal"},
+        "encoding": {
+          "x": {
+            "field": "Assets",
+            "type": "quantitative",
+            "axis": {"title": null, "ticks": false}
+          },
+          "tooltip": [
+            {"field": "Company", "type": "nominal"},
+            {"field": "Global_Rank", "type": "nominal", "title": "Rank"},
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {
+              "field": "Assets",
+              "type": "quantitative",
+              "format": "$",
+              "title": "Assets ($billion)"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "bar", "size": 15, "yOffset": 16, "color": "pink"},
+        "encoding": {
+          "x": {
+            "field": "Market Value",
+            "type": "quantitative",
+            "axis": {"title": null, "ticks": false}
+          },
+          "tooltip": [
+            {"field": "Company", "type": "nominal"},
+            {"field": "Global_Rank", "type": "nominal", "title": "Rank"},
+            {"field": "Country", "type": "nominal"},
+            {"field": "Continent", "type": "nominal"},
+            {
+              "field": "Market Value",
+              "type": "quantitative",
+              "format": "$",
+              "title": "Market Value ($billion)"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {"type": "text"},
+        "encoding": {
+          "fill": {
+            "field": "legendTitle",
+            "scale": {
+              "domain": ["Sales", "Profits", "Assets", "Market Value"],
+              "range": ["purple", "orange", "teal", "pink"]
+            },
+            "legend": {"title": null, "symbolType": "square", "orient": "right"}
+          }
+        }
+      }
+    ]
+  }
