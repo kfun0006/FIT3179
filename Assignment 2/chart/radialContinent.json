@@ -1,102 +1,111 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Continent-wise Distribution",
-    "data": {
-      "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/Continent%20Count.csv"
-    },
-    "transform": [
-      {
-        "calculate": "datum.Count / 1924",
-         "as": "Count%"
-      }
-    ],
-    "layer": [
-      {
-        "mark": {"type": "arc", "innerRadius": 25, "stroke": "#fff"}
-      },
-      {
-        "mark": {"type": "text", "radiusOffset": 20},
-        "encoding": {
-          "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Continent'] == 'Asia'|| datum['Continent'] == 'North America' || datum['Continent'] == 'Europe'",
-              "value": 1
-            },
-            "value": 0
-          }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Continent-wise Distribution",
+  "width": "200",
+  "height": "200",
+  "data": {
+    "url": "https://raw.githubusercontent.com/kfun0006/FIT3179/main/Assignment%202/csv/Continent%20Count.csv"
+  },
+  "background": "#fafafa",
+  "config": {
+    "style": {
+        "cell": {
+            "stroke": "transparent"
         }
-      },
-      {
-        "mark": {"type": "text", "radiusOffset": 10},
-        "encoding": {
-          "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Continent'] == 'Africa'",
-              "value": 1
-            },
-            "value": 0
-          }
-        }
-      },
-      {
-        "mark": {"type": "text", "radiusOffset": 40},
-        "encoding": {
-          "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Continent'] == 'Oceania'",
-              "value": 1
-            },
-            "value": 0
-          }
-        }
-      },
-      {
-        "mark": {"type": "text", "radiusOffset": 20},
-        "encoding": {
-          "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Continent'] == 'South America'",
-              "value": 1
-            },
-            "value": 0
-          }
-        }
-      }
-    ],
-    "encoding": {
-      "theta": {"field": "Count", "type": "quantitative", "stack": true},
-      "radius": {"field": "Count", "scale": {"type": "sqrt", "zero": true, "rangeMin": 50}},
-      "color": {
-        "field": "Continent", 
-        "type": "nominal", 
-        "legend": null, 
-        "scale": {
-          "domain": [
-            "North America",
-            "South America",
-            "Europe",
-            "Africa",
-            "Asia",
-            "Oceania"
-          ],
-          "range": [
-            "#e41a1c",
-            "#984ea3",
-            "#ff7f00",
-            "#8fbf6d",
-            "#377eb8",
-            "#a65628"
-          ]
-        }
-      },
-      "tooltip": [
-        {"field":"Continent", "type": "nominal"},
-        {"field":"Count", "type": "quantitative", "title": "Count of Top 2000 Company"}
-      ]
     }
+  },
+  "transform": [
+    {
+      "calculate": "datum.Count / 1924",
+       "as": "Count%"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 25, "stroke": "#fff"}
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 20},
+      "encoding": {
+        "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Continent'] == 'Asia'|| datum['Continent'] == 'North America' || datum['Continent'] == 'Europe'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Continent'] == 'Africa'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 40},
+      "encoding": {
+        "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Continent'] == 'Oceania'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 20},
+      "encoding": {
+        "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Continent'] == 'South America'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {"field": "Count", "type": "quantitative", "stack": true},
+    "radius": {"field": "Count", "scale": {"type": "sqrt", "zero": true, "rangeMin": 50}},
+    "color": {
+      "field": "Continent", 
+      "type": "nominal", 
+      "legend": null, 
+      "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "range": [
+          "#e41a1c",
+          "#984ea3",
+          "#ff7f00",
+          "#8fbf6d",
+          "#377eb8",
+          "#a65628"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field":"Continent", "type": "nominal"},
+      {"field":"Count", "type": "quantitative", "title": "Count of Top 2000 Company"}
+    ]
   }
-  
+}

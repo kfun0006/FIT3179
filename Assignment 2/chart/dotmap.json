@@ -4,6 +4,13 @@
     "height": "300",
     "title": "Global Top 2000 Companies Location & Mean Market Value",
     "background": "#fafafa",
+    "config": {
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    },
     "params": [
         {
             "name": "MeanMarketValue_Above",
@@ -13,7 +20,7 @@
                 "min": 0,
                 "max": 32,
                 "step": 1,
-                "name": "Minimum Mean Market Value: "
+                "name": "Minimum Mean Market Value ($billion): "
             }
         },
         {
@@ -24,7 +31,7 @@
                 "min": 0,
                 "max": 2700,
                 "step": 100,
-                "name": "Minimum Total Market Value: "
+                "name": "Minimum Total Market Value ($billion): "
             }
         }
     ],
@@ -135,7 +142,7 @@
             "encoding": {
                 "opacity": {
                     "condition": {
-                    "test": "datum['County'] == 'UK' || datum['County'] == 'USA' || datum['County'] == 'China' || datum['County'] == 'Japan' || datum['County'] == 'Germany' || datum['County'] == 'France' || datum['County'] == 'Australia'",
+                    "test": "datum['County'] == 'UK' || datum['County'] == 'USA' || datum['County'] == 'China' || datum['County'] == 'Japan' || datum['County'] == 'Germany' || datum['County'] == 'France' || datum['County'] == 'Australia' || datum['County'] == 'Canada'",
                     "value": 1
                     },
                     "value": 0
