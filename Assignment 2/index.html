@@ -2,24 +2,94 @@
 <html>
 
 <head>
-    <title>FIT3179 - Assignemnt 2</title>
-    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <!-- Import pure.css -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Libre+Baskerville:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  <style>
+    h1 {
+      font-family: "DM Serif Display";
+    }
+
+    h2 {
+      font-family: "Libre Baskerville";
+    }
+
+    body {
+      background-color: rgb(254, 252, 255);
+    }
+
+    .page {
+      width: 850px;
+      background-color: #ededed;
+      margin: auto;
+      margin-top: 30px;
+      padding: 50px;
+      padding-top: 35px;
+      border-radius: 10px;
+    }
+
+    .page p {
+      font-family: "Roboto";
+    }
+
+    .TitleBlock {
+      max-width: 750px;
+      margin-left: 25px;
+      background-color: #fafafa;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .MapBlock {
+      max-width: 750px;
+      margin-left: 25px;
+      background-color: #fafafa;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    .MapBlock p {
+      font-size: 15px;
+    }
+
+    .vis-container {
+      width: 100%;
+    }
+
+    .description h2, h1 {
+      margin-top: 0px;
+    }
+
+    .description-right {
+      padding-left: 20px;
+    }
+
+    .description-left {
+      padding-right: 20px;
+    }
+
+    .pure-g {
+      margin-bottom: 30px;
+    }
+
+    .small-font {
+      font-size: 14px;
+    }
+
+  </style>
 
 </head>
 
@@ -29,26 +99,69 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
+      <div class="TitleBlock">
         <div class="pure-u-1-1">
-            <h1>Global Top 2000 Companies: 2020</h1>
-            <p>This page demonstrates how you can use pure.css grid for your layout.</p>
+          <h1 style="text-align: center;"><span style="color: #340034;">2020 Global Top 2000 Companies</span></h1>
         </div>
+        <div class="pure-u-1-3">
+          <p>
+            <b>Forbes</b> has published its <b>Global 2000 ranking</b>, which showcases the worlds 2,000 public companies as of May 13 2020. 
+            These corporate giants collectively represent a <b>$42.3 trillion</b>, <b>in revenues</b>. Contribute <b>$3.3 trillion in profits</b>. 
+            Furthermore they command <b>assets $201.4 trillion</b>. Possess a <b>combined market capitalization of $54.3 trillion</b>. 
+            It is important to note that although sales and assets have experienced growth compared to the year there has been a decline in profits and market capitalization.
+          </p>
+        </div>
+        <div class="pure-u-1-3" style="margin-left: 20px;">
+          <p>
+            The unexpected turbulence in markets due to the <b>COVID 19 pandemic</b> has significantly impacted the market values of companies listed in the Global 2000 ranking. 
+            The market values presented in this ranking were determined as of April 30th reflecting the shifts within the landscape. 
+            This years threshold for entry into this group of companies was set at a <b>market value of $5.27 billion</b>, which is notably lower than the preceding years threshold of $6.25 billion.
+          </p>
+        </div>
+        <div class="pure-u-1-3" style="margin-left: 20px; max-width: 200px;">
+          <p>
+            This interactive dashboard provides an exploration of the Global 2000 companies offering a view of their <b>geographic presence</b>, 
+            <b>regional distribution</b> and <b>financial performance</b>. By utilizing this tool you can gain insights, into the corporate landscape.
+          </p>
+        </div>
+      </div>
     </div>
     <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="description description-left">
-          <h2>Two Columns Layout</h2>
-          <p>The first column contains text and the second column contains a visualisation.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+      <div class="MapBlock">
+        <div class="pure-u-1-1">
+          <h2><span style="color: #340034;">Location</span></h2>
         </div>
-      </div>
-      <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
+        <div class="pure-u-1-1" style="text-align: center;">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2" style="max-width: 350px; margin-top: 10px;">
+          <p>
+            The map visualization gives a picture of where the Top 2000 companiesre located around the world. Each marker, on the map represents a continent. Is color coded accordingly. 
+            The size of the markers indicates the market value, which is calculated by dividing the market value by the number of Top 2000 companies in that particular location.
+          </p>
+          <p>
+            Interestingly among all countries The Netherlands stands out with an market value of $32.23 billion. 
+            This comes as no surprise since The Netherlands has a total market value and a smaller number of Top 2000 companies compared to other nations. 
+            This combination contributes to its average market value.
+          </p>
+          <p>
+            On the hand Greece has the average market value among all countries with just $2.24 billion. 
+            Although Greece does have ten Top 2000 companies its overall low total market value puts it at the bottom of the list.
+          </p>
+        </div>
+        <div class="pure-u-1-2" style="margin-left: 20px; margin-top: 10px;">
+          <p>
+            In contrast countries, like China, the United Kingdom, Japan and the United States have total market values but also more Top 2000 companies. 
+            This slightly reduces their market values compared to The Netherlands. However these countries still have a higher average market values compared to other nations.
+          </p>
+          <p>
+            Lastly, while there are only two countries in Oceania that house Top 2000 companies, Australia's ability to achieve a notably high mean market value is indeed an impressive accomplishment, 
+            which emphasizing its significant economic position, on a global scale.
+          </p>
+        </div>
       </div>
     </div>
     <!-- end pure grid group -->
