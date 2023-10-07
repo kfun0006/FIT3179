@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "580",
-    "height": "300",
+    "width": 580,
+    "height": 300,
     "title": "Global Top 2000 Companies Location & Mean Market Value",
     "background": "#fafafa",
     "config": {

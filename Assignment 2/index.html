@@ -57,10 +57,6 @@
       font-size: 15px;
     }
 
-    .text_font {
-      font-size: 15px;
-    }
-
     .description h2, h1 {
       margin-top: 0px;
     }
@@ -93,7 +89,7 @@
         </div>
         <div class="pure-u-1-3">
           <p>
-            <b><span style="font-size: 30px; font-family: Libre Baskerville;">Forbes</span></b> has published its <b>Global 2000 ranking</b>, which showcases the worlds 2,000 public companies as of May 13 2020. 
+            <b><span style="font-size: 25px; font-family: Libre Baskerville;">Forbes</span></b> has published its <b>Global 2000 ranking</b>, which showcases the worlds 2,000 public companies as of May 13 2020. 
             These corporate giants collectively represent a <b>$42.3 trillion</b>, <b>in revenues</b>. Contribute <b>$3.3 trillion in profits</b>. 
             Furthermore they command <b>assets $201.4 trillion</b>. Possess a <b>combined market capitalization of $54.3 trillion</b>. 
             It is important to note that although sales and assets have experienced growth compared to the year there has been a decline in profits and market capitalization.
@@ -120,7 +116,7 @@
     <div class="pure-g">
       <div class="block">
         <div class="pure-u-1-1">
-          <h2><span style="color: #340034;">Location</span></h2>
+          <h2><span style="color: #340034;">LOCATION</span></h2>
         </div>
         <div class="pure-u-1-1">
           <div id="vis1"></div>
@@ -167,12 +163,12 @@
     <div class="pure-g">
       <div  class="block">
         <div class="pure-u-1-1">
-          <h2><span style="color: #340034;">Distribution</span></h2>
+          <h2><span style="color: #340034;">DISTRIBUTION</span></h2>
         </div>
-        <div class="pure-u-1-3" style="margin-left: 60px;">
+        <div class="pure-u-1-2" style="margin-left: 20px;">
           <div id="vis2"></div>
         </div>
-        <div class="pure-u-1-3" style="margin-left: 60px;">
+        <div class="pure-u-1-2" style="max-width: 100px;">
           <div id="vis3"></div>
         </div>
         <div class="pure-u-1-2" style="max-width: 350px; margin-top: 10px;">
@@ -216,6 +212,50 @@
       </div>
     </div>
     <!-- End Radial Charts -->
+
+    <!-- Bubble Charts -->
+    <div class="pure-g">
+      <div class="block">
+        <div class="pure-u-1-1">
+          <h2><span style="color: #340034;">RATE</span></h2>
+          <p style="font-style: italic; font-weight: bold;">Brush the chart for a clearer view.</p>
+        </div>
+        <div class="pure-u-1-1">
+          <div id="vis4"></div>
+        </div>
+        <div class="pure-u-1-2" style="max-width: 350px; margin-top: 10px;">
+          <p>
+            The first bubble chart offers a detailed examination of the interplay between a company's <b>Assets</b> and its <b>Sales</b>, providing insights into their connection. 
+            In this visualization, the size of each bubble serves as a visual representation of the <b>Assets Turnover Rate</b>. 
+            This rate is meticulously calculated by dividing a company's Sales by its Total Assets, shedding light on how effectively the company leverages its assets to generate revenue.
+          </p>
+          <p>
+            Similarly, the second bubble chart delves into the relationship between a company's <b>Assets</b> and its <b>Profits</b>. 
+            Each bubble's size signifies the <b>Return On Assets Ratio</b>, a crucial metric derived by dividing Total Profits by Total Assets. 
+            This ratio provides a deeper understanding of a company's profitability concerning its asset portfolio. 
+            It unveils how efficiently the company utilizes its assets to generate profits, showcasing its effectiveness in translating asset strength into financial success.
+          </p>
+          <p>
+            Both of these charts are thoughtfully color-coded by <b>continent</b>.
+          </p>
+        </div>
+        <div class="pure-u-1-2" style="margin-left: 20px; margin-top: 10px;">
+          <p>
+            In our comprehensive analysis, we discern a distinct <b>positive correlation</b> between a company's Assets and its Sales/Profits. 
+            Companies positioned in the <b>right quadrant</b> of the chart, such as <span style="color: #377eb8;"><b>ICBC</b></span> and <span style="color: #377eb8;"><b>China Construction Bank</b></span>, 
+            exemplify <b>substantial Asset bases and commendable Sales/Profits performance</b>. 
+            Take ICBC, for instance, a banking giant that adeptly harnesses its assets to yield substantial revenue, exemplifying its operational prowess.
+          </p>
+          <p>
+            Notably, among this select group, <span style="color: #e41a1c;"><b>Exxon Mobil</b></span> emerges as a standout performer. Leveraging its substantial asset portfolio, 
+            <span style="color: #e41a1c;"><b>Exxon Mobil</b></span> achieves an <b>Assets Turnover Ratio</b> surpassing <b>1</b> and a robust <b>Return On Assets</b> Ratio exceeding <b>0.05</b>. 
+            This impressive performance underscores Exxon Mobil's exceptional ability to efficiently convert its assets into substantial sales and profits, 
+            marking it as an exemplar in the realm of asset utilization and profitability.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Bubble Charts -->
 
   </div> <!-- end page -->
 

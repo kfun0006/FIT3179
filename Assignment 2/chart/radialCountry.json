@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Country-wise Distribution",
-  "width": "200",
-  "height": "250",
+  "width": 200,
+  "height": 250,
   "background": "#fafafa",
   "config": {
       "style": {
