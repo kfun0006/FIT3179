@@ -60,14 +60,14 @@
         "x": {
           "field": "Assets",
           "type": "quantitative",
-          "axis": {"tickCount": 3},
+          "axis": {"tickCount": 3, "format": "$"},
           "scale": {"type": "log", "domain": [1, 5000]},
           "title" : null
         },
         "y": {
           "field": "Sales",
           "type": "quantitative",
-          "axis": {"tickCount": 3},
+          "axis": {"tickCount": 3, "format": "$"},
           "scale": {"type": "log", "domain": [0.1, 1000]},
           "title" : "Sales ($billion)"
         }
@@ -252,14 +252,14 @@
         "x": {
           "field": "Assets",
           "type": "quantitative",
-          "axis": {"tickCount": 3},
+          "axis": {"tickCount": 3, "format": "$"},
           "scale": {"type": "log", "domain": [1, 5000]},
           "title" : "Assets ($billion)"
         },
         "y": {
           "field": "Profits",
           "type": "quantitative",
-          "axis": {"tickCount": 3},
+          "axis": {"tickCount": 3, "format": "$"},
           "scale": {"type": "log", "domain": [0.1, 1000]},
           "title" : "Profits ($billion)"
         }
