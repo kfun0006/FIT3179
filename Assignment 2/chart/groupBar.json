@@ -21,7 +21,7 @@
         "x": {
           "field": "Sales",
           "type": "quantitative",
-          "axis": {"title": null, "ticks": false, "format": "$.0f", "labelAngle": 90}
+          "axis": {"title": null, "ticks": false, "format": "$.0f", "labelAngle": 45}
         },
         "tooltip": [
           {"field": "Company", "type": "nominal"},
