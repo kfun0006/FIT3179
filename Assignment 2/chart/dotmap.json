@@ -33,9 +33,42 @@
                 "step": 100,
                 "name": "Minimum Total Market Value ($billion): "
             }
+        },
+        {
+            "name": "zoom_level",
+            "value": 100,
+            "bind": {
+                "input": "range",
+                "min": 100,
+                "max": 600,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center_to",
+            "value": {"name": "Center"},
+            "bind": {
+                "input": "select",
+                "options": [
+                    {"name": "Center", "value": [0, 0]},
+                    {"name": "North America", "value": [-95, 35]},
+                    {"name": "South America", "value": [-60, -15]},
+                    {"name": "Europe", "value": [10, 50]},
+                    {"name": "Africa", "value": [20, 0]},
+                    {"name": "Asia", "value": [100, 30]},
+                    {"name": "Oceania", "value": [140, -25]}
+                ],
+                "name": "Map Centre",
+                "labels": ["Center", "North America", "South America", "Europe", "Africa", "Asia", "Oceania"]
+            }
         }
     ],
-    "projection": {"type": "equalEarth"},
+    "projection": {
+      "type": "equalEarth",
+      "center": {"expr": "center_to.value"},
+      "scale": {"expr": "zoom_level"}
+    },
     "layer": [
         {
             "data": {
