@@ -6,6 +6,17 @@ h2 {
   font-family: "Libre Baskerville";
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1; 
+}
+
 body {
   background-image: url('bg.jpg');
   background-size: auto;
