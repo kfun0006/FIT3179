@@ -38,7 +38,7 @@
       }
     },
     {
-      "mark": {"type": "text", "radiusOffset": 10},
+      "mark": {"type": "text", "radiusOffset": 50},
       "encoding": {
         "text": {"field": "Count%", "type": "quantitative", "format": ".2%"},
         "opacity": {
