@@ -41,9 +41,10 @@
       "legend": {"title": null, "symbolType": "square", "orient": "top-right"}
     },
     "tooltip": [
-      {"field": "Company", "title": "Company"},
-      {"field": "ValueType", "title": "Data Type"},
-      {"field": "Value", "title": "Value ($billion)", "format": "$"}
+      {"field": "Rank", "type": "ordinal"},
+      {"field": "Company", "type": "nominal"},
+      {"field": "ValueType", "type": "nominal", "title": "Data Type"},
+      {"field": "Value", "type": "quantitative", "title": "Value ($billion)", "format": "$"}
     ]
   }
 }
